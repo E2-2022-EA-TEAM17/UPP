@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.15.0">
+    <businessObjects>
+        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.canditate_registration.CandidateRegistrationRequest">
+            <fields>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.users.Candidate" fetchType="EAGER" name="candidate" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.canditate_registration.CandidateRequestState" fetchType="EAGER" name="requestState" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="createDate" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="dueDate" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="acceptanceCounter" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="totalReviewsCounter" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.canditate_registration.CandidateRequestState">
+            <fields>
+                <field type="STRING" length="255" name="name" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.common.Address">
+            <fields>
+                <field type="STRING" length="255" name="city" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="street" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="number" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.company_registration.CompanyRegistrationRequest">
+            <fields>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.users.Company" fetchType="EAGER" name="company" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.company_registration.CompanyRequestState" fetchType="EAGER" name="requestState" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="denialReason" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="createDate" nullable="true" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="dueDate" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.company_registration.CompanyRequestState">
+            <fields>
+                <field type="STRING" length="255" name="name" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.premium_service.PremiumServiceRequest">
+            <fields>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.users.Candidate" fetchType="EAGER" name="candidate" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.premium_service.PremiumServiceTerm" fetchType="EAGER" name="termsOfService" nullable="true" collection="true"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.premium_service.PremiumServiceTerm">
+            <fields>
+                <field type="STRING" length="255" name="name" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="description" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.users.Candidate">
+            <fields>
+                <field type="STRING" length="255" name="username" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="password" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="email" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="firstname" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="lastname" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.common.Address" fetchType="EAGER" name="address" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="phoneNumber" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="education" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="cvPath" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="motivationLetterPath" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.users.Company">
+            <fields>
+                <field type="STRING" length="255" name="username" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="password" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="email" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="name" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.common.Address" fetchType="LAZY" name="address" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="phoneNumber" nullable="true" collection="false"/>
+                <field type="LOCALDATE" length="255" name="establishmentDate" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="taxID" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
