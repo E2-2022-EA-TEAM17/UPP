@@ -1,8 +1,257 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1" name="EmploymentCompany">
-  <customUserInfoDefinitions/>
-  <users/>
-  <roles/>
-  <groups/>
-  <memberships/>
+  <customUserInfoDefinitions>
+    <customUserInfoDefinition>
+      <name>cvPath</name>
+      <description></description>
+    </customUserInfoDefinition>
+    <customUserInfoDefinition>
+      <name>motivationLetterPath</name>
+      <description></description>
+    </customUserInfoDefinition>
+    <customUserInfoDefinition>
+      <name>education</name>
+      <description></description>
+    </customUserInfoDefinition>
+  </customUserInfoDefinitions>
+  <users>
+    <user userName="Candidate1">
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>cvPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>motivationLetterPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>education</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
+    </user>
+    <user userName="PremiumServiceEmployee1">
+      <manager>PremiumServiceBoss1</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>cvPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>motivationLetterPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>education</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
+    </user>
+    <user userName="PremiumServiceBoss1">
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>cvPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>motivationLetterPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>education</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
+    </user>
+    <user userName="CompanyRegistrationEmployee1">
+      <manager>CompanyRegistrationBoss1</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>cvPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>motivationLetterPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>education</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
+    </user>
+    <user userName="CompanyRegistrationBoss1">
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>cvPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>motivationLetterPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>education</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
+    </user>
+    <user userName="HREmployee1">
+      <manager>HRBoss1</manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>cvPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>motivationLetterPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>education</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
+    </user>
+    <user userName="HRBoss1">
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>cvPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>motivationLetterPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>education</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
+    </user>
+    <user userName="Company1">
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>cvPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>motivationLetterPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>education</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
+    </user>
+  </users>
+  <roles>
+    <role name="Member">
+      <displayName>Member</displayName>
+    </role>
+    <role name="Boss">
+      <displayName>Boss</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="Candidates">
+      <displayName>Candidates</displayName>
+    </group>
+    <group name="PremiumServiceTeam" parentPath="/EmploymentCompany">
+      <displayName>Premium Service Team</displayName>
+    </group>
+    <group name="CompanyRegistrationTeam" parentPath="/EmploymentCompany">
+      <displayName>Company Registration Team</displayName>
+    </group>
+    <group name="EmploymentCompany">
+      <displayName>EmploymentCompany</displayName>
+    </group>
+    <group name="Company">
+      <displayName>Company</displayName>
+    </group>
+    <group name="HR Team" parentPath="/Company">
+      <displayName>HR Team</displayName>
+    </group>
+    <group name="ProjectTeam" parentPath="/Company">
+      <displayName>Project Team</displayName>
+    </group>
+    <group name="CompanyTeam" parentPath="/EmploymentCompany">
+      <displayName>Company Team</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>Candidate1</userName>
+      <roleName>Member</roleName>
+      <groupName>Candidates</groupName>
+    </membership>
+    <membership>
+      <userName>PremiumServiceEmployee1</userName>
+      <roleName>Member</roleName>
+      <groupName>PremiumServiceTeam</groupName>
+      <groupParentPath>/EmploymentCompany</groupParentPath>
+    </membership>
+    <membership>
+      <userName>PremiumServiceBoss1</userName>
+      <roleName>Boss</roleName>
+      <groupName>PremiumServiceTeam</groupName>
+      <groupParentPath>/EmploymentCompany</groupParentPath>
+    </membership>
+    <membership>
+      <userName>CompanyRegistrationEmployee1</userName>
+      <roleName>Member</roleName>
+      <groupName>CompanyRegistrationTeam</groupName>
+      <groupParentPath>/EmploymentCompany</groupParentPath>
+    </membership>
+    <membership>
+      <userName>CompanyRegistrationBoss1</userName>
+      <roleName>Boss</roleName>
+      <groupName>CompanyRegistrationTeam</groupName>
+      <groupParentPath>/EmploymentCompany</groupParentPath>
+    </membership>
+    <membership>
+      <userName>HREmployee1</userName>
+      <roleName>Member</roleName>
+      <groupName>HR Team</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>HRBoss1</userName>
+      <roleName>Boss</roleName>
+      <groupName>HR Team</groupName>
+      <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>Company1</userName>
+      <roleName>Member</roleName>
+      <groupName>Company</groupName>
+    </membership>
+  </memberships>
 </organization:Organization>

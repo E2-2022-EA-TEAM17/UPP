@@ -12,7 +12,7 @@
                 <field type="FLOAT" length="255" name="price" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.candidateEmployment.EmploymentRequestState" fetchType="LAZY" name="requestState" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.users.Company" fetchType="LAZY" name="company" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.users.Candidate" fetchType="EAGER" name="candidates" nullable="true" collection="true"/>
+                <field type="LONG" length="255" name="candidatesIds" nullable="true" collection="true"/>
                 <field type="LOCALDATETIME" length="255" name="dueDate" nullable="false" collection="false"/>
             </fields>
             <uniqueConstraints/>
@@ -37,12 +37,10 @@
         </businessObject>
         <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.canditate_registration.CandidateRegistrationRequest">
             <fields>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.users.Candidate" fetchType="EAGER" name="candidate" nullable="false" collection="false"/>
+                <field type="LONG" length="255" name="candidateId" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.canditate_registration.CandidateRequestState" fetchType="EAGER" name="requestState" nullable="false" collection="false"/>
                 <field type="LOCALDATETIME" length="255" name="createDate" nullable="false" collection="false"/>
                 <field type="LOCALDATETIME" length="255" name="dueDate" nullable="false" collection="false"/>
-                <field type="INTEGER" length="255" name="acceptanceCounter" nullable="true" collection="false"/>
-                <field type="INTEGER" length="255" name="totalReviewsCounter" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -101,7 +99,7 @@
                 <field type="LOCALDATETIME" length="255" name="possibleDates" nullable="true" collection="true"/>
                 <field type="LOCALDATETIME" length="255" name="chosenDate" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.premium_service.InterviewPriorityState" fetchType="LAZY" name="priority" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.premium_service.InterviewReview" fetchType="LAZY" name="interviewReviews" nullable="true" collection="true"/>
+                <relationField type="COMPOSITION" reference="rs.ac.uns.ftn.upp.tim17.model.premium_service.InterviewReview" fetchType="EAGER" name="interviewReviews" nullable="true" collection="true"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -136,10 +134,10 @@
         </businessObject>
         <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.premium_service.PremiumServiceRequest">
             <fields>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.users.Candidate" fetchType="EAGER" name="candidate" nullable="false" collection="false"/>
+                <field type="LONG" length="255" name="candidateId" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.premium_service.PremiumServiceTerm" fetchType="EAGER" name="termsOfService" nullable="true" collection="true"/>
                 <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.premium_service.CVMLRequestState" fetchType="LAZY" name="cvmlRequestState" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.premium_service.Interview" fetchType="EAGER" name="interviews" nullable="true" collection="true"/>
+                <relationField type="COMPOSITION" reference="rs.ac.uns.ftn.upp.tim17.model.premium_service.Interview" fetchType="EAGER" name="interviews" nullable="true" collection="true"/>
                 <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.premium_service.ServiceRequestState" fetchType="LAZY" name="serviceRequestState" nullable="false" collection="false"/>
                 <field type="LOCALDATETIME" length="255" name="dueDate" nullable="false" collection="false"/>
             </fields>
@@ -172,30 +170,13 @@
             <queries/>
             <indexes/>
         </businessObject>
-        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.users.Candidate">
-            <fields>
-                <field type="STRING" length="255" name="username" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="password" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="email" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="firstname" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="lastname" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.common.Address" fetchType="EAGER" name="address" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="phoneNumber" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="education" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="cvPath" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="motivationLetterPath" nullable="true" collection="false"/>
-            </fields>
-            <uniqueConstraints/>
-            <queries/>
-            <indexes/>
-        </businessObject>
         <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.users.Company">
             <fields>
                 <field type="STRING" length="255" name="username" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="password" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="email" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="name" nullable="false" collection="false"/>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.common.Address" fetchType="LAZY" name="address" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.common.Address" fetchType="EAGER" name="address" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="phoneNumber" nullable="false" collection="false"/>
                 <field type="LOCALDATE" length="255" name="establishmentDate" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="taxID" nullable="false" collection="false"/>
