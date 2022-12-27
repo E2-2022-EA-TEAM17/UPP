@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0" productVersion="7.15.0">
     <businessObjects>
+        <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.candidateEmployment.Employee">
+            <fields>
+                <field type="STRING" length="255" name="workPosition" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="education" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="experience" nullable="true" collection="false"/>
+                <field type="FLOAT" length="255" name="maxSalary" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="rs.ac.uns.ftn.upp.tim17.model.candidateEmployment.EmploymentRequest">
             <fields>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.candidateEmployment.PackageType" fetchType="LAZY" name="packageType" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="packageType" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="numOfEmployees" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="employeesPosition" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="employeesExperience" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="employeesEducation" nullable="false" collection="false"/>
-                <field type="FLOAT" length="255" name="employeesMaxSalary" nullable="false" collection="false"/>
                 <field type="FLOAT" length="255" name="price" nullable="true" collection="false"/>
-                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.candidateEmployment.EmploymentRequestState" fetchType="LAZY" name="requestState" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="requestState" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.users.Company" fetchType="LAZY" name="company" nullable="false" collection="false"/>
                 <field type="LONG" length="255" name="candidatesIds" nullable="true" collection="true"/>
                 <field type="LOCALDATETIME" length="255" name="dueDate" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="rs.ac.uns.ftn.upp.tim17.model.candidateEmployment.Employee" fetchType="LAZY" name="potentialyEmployees" nullable="true" collection="true"/>
             </fields>
             <uniqueConstraints/>
             <queries/>

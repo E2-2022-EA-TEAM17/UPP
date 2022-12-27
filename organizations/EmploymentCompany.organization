@@ -380,6 +380,30 @@
         </customUserInfoValue>
       </customUserInfoValues>
     </user>
+    <user userName="CandidateEmploymentBoss">
+      <firstName>Candidate Employment</firstName>
+      <lastName>Boss</lastName>
+      <jobTitle>Candidate Employment Boss</jobTitle>
+      <personalData/>
+      <professionalData>
+        <email>candidateemploymentboss@localhost.com</email>
+      </professionalData>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues>
+        <customUserInfoValue>
+          <name>cvPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>motivationLetterPath</name>
+          <value></value>
+        </customUserInfoValue>
+        <customUserInfoValue>
+          <name>education</name>
+          <value></value>
+        </customUserInfoValue>
+      </customUserInfoValues>
+    </user>
   </users>
   <roles>
     <role name="Member">
@@ -524,6 +548,11 @@
       <roleName>Member</roleName>
       <groupName>ProjectTeam</groupName>
       <groupParentPath>/Company</groupParentPath>
+    </membership>
+    <membership>
+      <userName>CandidateEmploymentBoss</userName>
+      <roleName>Boss</roleName>
+      <groupName>EmploymentCompany</groupName>
     </membership>
   </memberships>
 </organization:Organization>
