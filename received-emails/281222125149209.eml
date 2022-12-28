@@ -1,0 +1,17 @@
+        Wed, 28 Dec 2022 00:51:49 +0100 (CET)
+Date: Wed, 28 Dec 2022 00:51:49 +0100 (CET)
+From: sender@localhost.com
+To: reciver@localhost.com
+Message-ID: <1161913160.3.1672185109209@[192.168.0.102]>
+Subject: Notification
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_2_1117587343.1672185109178"
+
+------=_Part_2_1117587343.1672185109178
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Dates are created</p>
+
+------=_Part_2_1117587343.1672185109178--
