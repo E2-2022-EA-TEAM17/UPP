@@ -138,7 +138,7 @@
           <formMapping xmi:type="process:FormMapping" xmi:id="__utuuHTdEe2wnM7I0FefOg">
             <targetForm xmi:type="expression:Expression" xmi:id="_KTXEYISQEe2sbZWDdRKTew" name="acceptRequestForm" content="e073699c-96ad-431b-886d-8ac3e7452ea2" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <filters xmi:type="process:ActorFilter" xmi:id="_etvIwISOEe2sbZWDdRKTew" name="chosenEmployee" definitionId="bonita-actorfilter-single-user" definitionVersion="1.0.0">
+          <filters xmi:type="process:ActorFilter" xmi:id="_etvIwISOEe2sbZWDdRKTew" name="employee" definitionId="bonita-actorfilter-single-user" definitionVersion="1.0.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_etvIwYSOEe2sbZWDdRKTew" definitionId="bonita-actorfilter-single-user" version="1.0.0">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_etvIwoSOEe2sbZWDdRKTew" key="userId">
                 <expression xmi:type="expression:Expression" xmi:id="_etvIw4SOEe2sbZWDdRKTew" name="userId()" content="return Long.valueOf(employee.userId)" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Long" returnTypeFixed="true">
@@ -852,6 +852,9 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_WxInIISlEe2OAMVQIP3jFQ" name="initCompany()" content="def companyVar = new rs.ac.uns.ftn.upp.tim17.model.users.Company()&#xD;&#xA;companyVar.username = companyInput?.username&#xD;&#xA;companyVar.password = companyInput?.password&#xD;&#xA;companyVar.email = companyInput?.email&#xD;&#xA;companyVar.name = companyInput?.name&#xD;&#xA;companyVar.address = companyInput?.address&#xD;&#xA;companyVar.phoneNumber = companyInput?.phoneNumber&#xD;&#xA;companyVar.establishmentDate = companyInput?.establishmentDate&#xD;&#xA;companyVar.taxID = companyInput?.taxID&#xD;&#xA;companyVar.isAccepted = companyInput?.isAccepted&#xD;&#xA;return companyVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="rs.ac.uns.ftn.upp.tim17.model.users.Company">
           <referencedElements xmi:type="process:ContractInput" xmi:id="_WxInIYSlEe2OAMVQIP3jFQ" name="companyInput" type="COMPLEX"/>
         </defaultValue>
+      </data>
+      <data xmi:type="process:JavaObjectData" xmi:id="_Pn4KEIaVEe2-wpZ7NlhCzQ" name="chosenEmployee" dataType="_idhGrHTSEe21FcqDBpZx_Q" className="java.util.Map">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_Pn4KEYaVEe2-wpZ7NlhCzQ" content="" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.Map"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_idhGjnTSEe21FcqDBpZx_Q">
         <targetForm xmi:type="expression:Expression" xmi:id="_9rRycISjEe2OAMVQIP3jFQ" name="companyForm" content="96788620-5393-44f4-a277-ea5bb8ef7cfa" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
